@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!--Partial view to display information-->
+
+@model Assignment3.Models.MoviesResponse
+
+<tr>
+    <td style="border:double">&nbsp; @Model.Category &nbsp;</td>
+    <td style="border:double">&nbsp; @Model.Title &nbsp;</td>
+    <td style="border:double">&nbsp; @Model.Year &nbsp;</td>
+    <td style="border:double">&nbsp; @Model.Director &nbsp;</td>
+    <td style="border:double">&nbsp; @Model.Rating &nbsp;</td>
+    <td style="border:double">&nbsp; @Model.Edited &nbsp;</td>
+    <td style="border:double">&nbsp; @Model.LentTo &nbsp;</td>
+    <td style="border:double">&nbsp; @Model.Notes &nbsp;</td>
+    <td style="border:double">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="MovieID" value="@Model.MovieID" />
+            <input type="hidden" asp-for="Category" value="@Model.Category" />
+            <input type="hidden" asp-for="Title" value="@Model.Title" />
+            <input type="hidden" asp-for="Year" value="@Model.Year" />
+            <input type="hidden" asp-for="Director" value="@Model.Director" />
+            <input type="hidden" asp-for="Rating" value="@Model.Rating" />
+            <input type="hidden" asp-for="Edited" value="@Model.Edited" />
+            <input type="hidden" asp-for="LentTo" value="@Model.LentTo" />
+            <input type="hidden" asp-for="Notes" value="@Model.Notes" />
+            <button type="submit">Edit</button>
+        </form>
+        <form asp-action="Remove" method="post">
+            <input type="hidden" asp-for="MovieID" value="@Model.MovieID" />
+            @*<input type="hidden" asp-for="@x.Category" value="@x.Category" />
+                <input type="hidden" asp-for="@x.Title" value="@x.Title" />
+                <input type="hidden" asp-for="@x.Year" value="@x.Year" />
+                <input type="hidden" asp-for="@x.Director" value="@x.Director" />
+                <input type="hidden" asp-for="@x.Rating" value="@x.Rating" />
+                <input type="hidden" asp-for="@x.Edited" value="@x.Edited" />
+                <input type="hidden" asp-for="@x.LentTo" value="@x.LentTo" />
+                <input type="hidden" asp-for="@x.Notes" value="@x.Notes" />*@
+            <button type="submit">Remove</button>
+        </form>
+    </td>
+</tr>
